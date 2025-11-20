@@ -41,6 +41,7 @@ class TextParser:
                 length_function=len,
             )
             chunks =splitter.split_text(text)
+            return chunks
         except exception as e:
             print(e)
             return None
