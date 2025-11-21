@@ -12,9 +12,7 @@ from file_parsers.helper.parsing_helper import (
     is_pdf_file
 )
 from langchain_community.document_loaders import (
-    PyPDFLoader,
     PyMuPDFLoader,
-    UnstructuredPDFLoader
 )
 
 
@@ -60,6 +58,6 @@ class PDFParser:
                 dataset.append(data)
 
             return dataset
-        except exception as e:
+        except Exception as e:
             print(f"Exception>> {e}")
             return None
