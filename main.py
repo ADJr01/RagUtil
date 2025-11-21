@@ -4,7 +4,8 @@ def main():
     ps = PDFParser()
     ps.select_pdf(cpp_book_pdf)
     pdf_data = ps.process_pdf()
-    print(f"total pages: {len(pdf_data)}")
+    for page in pdf_data:
+        print(page[0].page_content,end="\n\n")
 
 
 
