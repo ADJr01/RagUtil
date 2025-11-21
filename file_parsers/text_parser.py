@@ -1,7 +1,7 @@
 from logging import exception
 
 from langchain_community.document_loaders import (TextLoader, DirectoryLoader)
-from langchain_core.documents import Document
+
 from langchain_text_splitters import (
     RecursiveCharacterTextSplitter,
 )
@@ -34,7 +34,7 @@ class TextParser:
 
     def text_to_chunks(self,text:str,max_chunk_size:int=200,chunk_overlap_limit:int=20,len_counter=len):
         try:
-            splitter = self.parser(
+            splitter = self.parser( #Recursive character text splitter
                 separators=["\n\n", "\n", ".", " ", ""],
                 chunk_size=max_chunk_size,
                 chunk_overlap=chunk_overlap_limit,
