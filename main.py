@@ -1,6 +1,6 @@
 from file_parsers.doc_parser import DocParser
 def main():
-   doc_parser = DocParser()
+   doc_parser = DocParser(False)
    doc_parser.load_from("C:\\Users\\STHEP\\Documents\\printing.docx")
    data = doc_parser.process()
    for page in data:
