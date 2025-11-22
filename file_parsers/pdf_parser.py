@@ -17,11 +17,11 @@ from langchain_community.document_loaders import (
 
 
 class PDFParser:
-    def __init__(self, pdf_path: str = None, pdf_parser=PyMuPDFLoader):
+    def __init__(self, pdf_path: str = None,chunk_size=1000,pdf_parser=PyMuPDFLoader):
         self.selected_pdf_path = None
         self.parser = pdf_parser
         self.text_parser = RecursiveCharacterTextSplitter(
-            chunk_size=500,
+            chunk_size=chunk_size,
             chunk_overlap=50,
             separators= ["\n\n","\n","."," ",""]
         )

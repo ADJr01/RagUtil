@@ -1,11 +1,11 @@
-from file_parsers.pdf_parser import PDFParser
+from file_parsers.doc_parser import DocParser
 def main():
-    cpp_book_pdf = "D:\\Training\\Course\\cpp\\cpp_book.pdf"
-    ps = PDFParser()
-    ps.select_pdf(cpp_book_pdf)
-    pdf_data = ps.process_pdf()
-    for page in pdf_data:
-        print(page[0].page_content,end="\n\n")
+   doc_parser = DocParser()
+   doc_parser.load_from("C:\\Users\\STHEP\\Documents\\printing.docx")
+   data = doc_parser.process()
+   for page in data:
+       print(page.page_content,end='\n\n')
+
 
 
 
