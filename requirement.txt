@@ -13,3 +13,4 @@ pandas
 python-docx
 docx2txt
 unstructured[docx]
+openpyxl
