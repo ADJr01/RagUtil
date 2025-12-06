@@ -14,3 +14,6 @@ python-docx
 docx2txt
 unstructured[docx]
 openpyxl
+langchain-ollama
+ollama
+langchain-chroma
