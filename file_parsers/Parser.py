@@ -16,10 +16,7 @@ from langchain_community.document_loaders import (
     UnstructuredWordDocumentLoader
 )
 from langchain_core.documents import Document
-from file_parsers.helper.parsing_helper import (
-    clean_pdf_text as cleaner,
-    is_pdf_file
-)
+from file_parsers.helper.parsing_helper import clean_pdf_text as cleaner
 
 
 class ParserConfigError(Exception):

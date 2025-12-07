@@ -1,15 +1,15 @@
-from file_parsers.Parser import Parser
+from Parser_2.Parser import Parser
 from embeddims.embeddings import get_ollama_embeddings
 
 
 
 def task():
-    books = 'D:\\Training\\Course\\CG\\test'
-    collection = "./chroma_db"
+
     embeddings = get_ollama_embeddings()
+
     parser_conf = {
-        "storage_dir": books,
-        "persist_dir": collection,
+        "storage_dir": 'D:\\Training\\Course\\CG\\test',
+        "persist_dir": "./chroma_db",
         "collection_name":"books",
         "embedding":embeddings,
         "chunk_size":2000,
@@ -22,12 +22,14 @@ def task():
     retriever = vector_store.as_retriever(
         search_kwargs={"k":5},
     )
-    result = retriever.invoke("what is Real-time rendering")
+    parser.close()
+    result = retriever.invoke("Real-time rendering")
     print("Result:\n\n\n")
     for doc in result:
         print("="*50)
         print(doc.page_content)
         print("="*50,end='\n\n')
+
 
 if __name__ == "__main__":
     task()
